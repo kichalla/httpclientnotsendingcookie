@@ -34,7 +34,7 @@ namespace WebApplication1
                 {
                     var cookies = string.Join(", ", httpContext.Request.Cookies.Select(kvp => $"{kvp.Key} : {kvp.Value}"));
 
-                    return httpContext.Response.WriteAsync("Postdata action received the following cookies:" + cookies);
+                    return httpContext.Response.WriteAsync("Postdata action received the following cookies:  " + cookies);
                 });
             });
         }

@@ -15,14 +15,12 @@ namespace ConsoleApplication
         {
             var client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:5000/");
-            client.Timeout = TimeSpan.FromSeconds(5);
 
-            Console.WriteLine("Making a request to get the antiforgery cookie from server");
+            Console.WriteLine("Make a request to get the cookies from server:");
             var response = await client.GetAsync("getdata");
             Console.WriteLine("Response headers: " + Environment.NewLine + response.ToString());
 
-
-            Console.WriteLine("Posting a request to the server");
+            Console.WriteLine("Posting a request to the server:");
             response = await client.PostAsync("postdata", new StringContent("asdfasdf"));
             Console.WriteLine("Response headers: " + Environment.NewLine + response.ToString());
             Console.WriteLine("Response content:");
